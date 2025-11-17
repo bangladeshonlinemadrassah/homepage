@@ -254,9 +254,10 @@
     }
 
     .modal-content {
-      background: linear-gradient(135deg, #808080, #8900f522);
+      position: relative;
+      background: linear-gradient(135deg, #1a0033, #320059, #000522);
       margin: 5% auto;
-      padding: 20px;
+      padding: 30px;
       border: 2px solid #00eaff66;
       width: 80%;
       max-width: 600px;
@@ -272,31 +273,38 @@
       height: auto;
       border-radius: 14px;
       border: 2px solid #00eaff44;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     }
 
     .modal-details {
-      font-size: 14px;
-      color: #FFFFFF;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #e5dfff;
       text-align: left;
-      padding: 0 10px;
+      padding: 0 15px;
+      font-weight: 400;
     }
 
     .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
       color: #fff;
-      float: right;
-      font-size: 28px;
+      font-size: 20px;
       font-weight: bold;
       cursor: pointer;
-      background: linear-gradient(45deg, #ff00c8, #ff0080);
+      background: rgba(255, 0, 128, 0.2);
       padding: 5px 10px;
-      border-radius: 50%;
+      border: 1px solid #ff00ff;
+      border-radius: 0;
       box-shadow: 0 0 10px #ff00ff88;
     }
 
     .close:hover,
     .close:focus {
       color: #ffea00;
+      background: rgba(255, 0, 128, 0.4);
       text-decoration: none;
     }
 
@@ -367,20 +375,20 @@
   <!-- Riab Hasan -->
   <div class="single-teacher" role="article" aria-label="Riab Hasan">
     <img src="https://i.imgur.com/Dl21S5x.jpeg" alt="Riab Hasan">
-    <div class="t-name">Riab Hasan</div>
+    <div class="t-name">Riad Hasan</div>
     <div class="t-position">CEO &amp; Founder</div>
-    <div class="t-exp">Experience: 2 Years</div>
+    <div class="t-exp">Experience: 6 Years</div>
     <div class="t-summary">
-      Riab Hasan is the visionary founder and CEO of Bangladesh Online Madrasa. He studied at the International Islamic University Chittagong (IIUC) and focuses on integrating technology with education to create accessible learning platforms.
+      Riad Hasan is the visionary founder and CEO of Bangladesh Online Madrasa. He studied at the International Islamic University Chittagong (IIUC) and focuses on integrating technology with education to create accessible learning platforms.
     </div>
   </div>
 
   <!-- Arabic Language Teacher -->
   <div class="single-teacher" role="article" aria-label="Arabic Language Teacher">
     <img src="https://i.imgur.com/xbCkScP.jpeg" alt="Arabic Language Teacher">
-    <div class="t-name">Arabic Language Teacher</div>
+    <div class="t-name">Md. Osman Goni</div>
     <div class="t-position">Lecturer in Arabic</div>
-    <div class="t-exp">Experience: 2 Years</div>
+    <div class="t-exp">Experience: 15 Years</div>
     <div class="t-summary">
       A skilled Arabic language instructor with academic training from the Islamic University, Kushtia. Uses clear explanation and structured lessons to build students' understanding of Arabic and Islamic studies.
     </div>
@@ -391,7 +399,7 @@
     <img src="https://i.imgur.com/TbM78cK.jpeg" alt="Dh Shipon">
     <div class="t-name">Dh Shipon</div>
     <div class="t-position">Lecturer, Department of English</div>
-    <div class="t-exp">Experience: 2 Years</div>
+    <div class="t-exp">Experience: 13 Years</div>
     <div class="t-summary">
       Dh Shipon is a dedicated English educator with B.A. (Honours) and M.A. (First Class) from the University of Chittagong. He focuses on literature and effective, engaging teaching methods.
     </div>
@@ -478,16 +486,19 @@ document.querySelectorAll(".details-btn").forEach(btn => {
     modalImg.src = course.img;
     modalDetails.innerHTML = course.details;
     modal.style.display = "block";
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
   });
 });
 
 closeBtn.addEventListener("click", function() {
   modal.style.display = "none";
+  document.body.style.overflow = ""; // Restore scrolling
 });
 
 window.addEventListener("click", function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+    document.body.style.overflow = ""; // Restore scrolling
   }
 });
 </script>
