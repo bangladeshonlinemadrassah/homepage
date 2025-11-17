@@ -28,22 +28,21 @@
 
     /* HEADER */
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px;
+      display: auto;
+      align: center;
+      font-size: 60px
+      padding: 7px;
       background: linear-gradient(90deg, #3a0ca3aa, #7209b7aa, #f72585aa);
-      backdrop-filter: blur(12px);
-      border-bottom: 2px solid #ff00ff88;
     }
-
-    .logo img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 15px;
-      border: 3px solid #00eaff;
-      box-shadow: 0 0 25px #00eaff88;
+  
+   h3 { text-align: center;
+      font-size: 50px;
+      margin-top: 5px;
+      font-family: "Russo One", sans-serif;
+      background: linear-gradient(90deg, #ff00ff, #00eaff, #ffea00, #ff6bcb, #00ff55);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 12px #ffffff55;
     }
 
     /* TITLE */
@@ -68,8 +67,8 @@
 
     /* BANNER */
     .teacher-banner img {
-      width: 92%;
-      height: 260px;
+      width: 98%;
+      height: 200px;
       display: block;
       margin: 25px auto;
       border-radius: 22px;
@@ -152,6 +151,7 @@
       margin-top: 10px;
       font-size: 17px;
       color: #ffea00;
+      cursor: pointer;
     }
 
     /* TEACHER BOX */
@@ -164,9 +164,16 @@
       text-align: center;
       border: 3px solid #ff00ff55;
       box-shadow: 0 0 35px #ff00ff55;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
-    .teacher-photo img {
+    .single-teacher {
+      text-align: center;
+    }
+
+    .single-teacher img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
@@ -175,17 +182,34 @@
       box-shadow: 0 0 20px #00ffe588;
     }
 
-    .teacher-box h3 {
+    .t-name {
       margin-top: 15px;
-      color: #00ffea;
-      font-size: 25px;
+      color: #ffea00;
+      font-size: 22px;
       font-weight: 700;
+      background: linear-gradient(90deg, #ff00ff, #00eaff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px #ffea0044;
     }
 
-    .teacher-box p {
+    .t-position {
       margin-top: 8px;
       font-size: 18px;
-      color: #ffea00;
+      color: #00ffea;
+    }
+
+    .t-exp {
+      margin-top: 5px;
+      font-size: 16px;
+      color: #e5dfff;
+    }
+
+    .t-summary {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #ffffffcc;
+      padding: 0 10px;
     }
 
     /* FOOTER */
@@ -215,9 +239,71 @@
       box-shadow: 0 0 12px #00eaffaa;
     }
 
+    /* MODAL STYLES */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      background: linear-gradient(135deg, #808080, #8900f522);
+      margin: 5% auto;
+      padding: 20px;
+      border: 2px solid #00eaff66;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #00eaff44;
+      text-align: center;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .modal-img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      border: 2px solid #00eaff44;
+      margin-bottom: 15px;
+    }
+
+    .modal-details {
+      font-size: 14px;
+      color: #FFFFFF;
+      text-align: left;
+      padding: 0 10px;
+    }
+
+    .close {
+      color: #fff;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      background: linear-gradient(45deg, #ff00c8, #ff0080);
+      padding: 5px 10px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #ff00ff88;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #ffea00;
+      text-decoration: none;
+    }
+
     @media (max-width: 600px) {
       .courses { grid-template-columns: 1fr; }
       h1 { font-size: 30px; }
+      .teacher-box { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -226,18 +312,14 @@
 
 <header>
   <div class="logo">
-    <img src="YOUR_LOGO_1_LINK" alt="Logo 1">
-  </div>
-  <div class="logo">
-    <img src="YOUR_LOGO_2_LINK" alt="Logo 2">
-  </div>
+    <h3>BOM</h3></div>
 </header>
 
 <h1>বাংলাদেশ অনলাইন মাদ্রাসা</h1>
 <h2>দেশজুড়ে মাদ্রাসা শিক্ষার্থীদের বিশ্বস্ত শিক্ষা সঙ্গী</h2>
 
 <div class="teacher-banner">
-  <img src="YOUR_TEACHER_BANNER_LINK" alt="">
+  <img src="https://i.imgur.com/CR18xz1.jpeg" alt="">
 </div>
 
 <button class="main-btn">আপনার এনরোলকৃত কোর্স</button>
@@ -254,39 +336,66 @@
     <div class="course-img">
       <img src="COURSE_IMAGE_1" alt="">
     </div>
-    <p>ডিটেল্স</p>
+    <p class="details-btn" data-course="1">ডিটেল্স</p>
   </div>
 
   <div class="course-box">
     <div class="course-img">
       <img src="COURSE_IMAGE_2" alt="">
     </div>
-    <p>ডিটেল্স</p>
+    <p class="details-btn" data-course="2">ডিটেল্স</p>
   </div>
 
   <div class="course-box">
     <div class="course-img">
       <img src="COURSE_IMAGE_3" alt="">
     </div>
-    <p>ডিটেল্স</p>
+    <p class="details-btn" data-course="3">ডিটেল্স</p>
   </div>
 
   <div class="course-box">
     <div class="course-img">
       <img src="COURSE_IMAGE_4" alt="">
     </div>
-    <p>ডিটেল্স</p>
+    <p class="details-btn" data-course="4">ডিটেল্স</p>
   </div>
 
 </div>
 
 <!-- TEACHER BOX -->
-<div class="teacher-box">
-  <div class="teacher-photo">
-    <img id="tImg" src="TEACHER_IMAGE_1" alt="">
+<div class="teacher-box" aria-label="Teachers">
+  <!-- Riab Hasan -->
+  <div class="single-teacher" role="article" aria-label="Riab Hasan">
+    <img src="https://i.imgur.com/Dl21S5x.jpeg" alt="Riab Hasan">
+    <div class="t-name">Riab Hasan</div>
+    <div class="t-position">CEO &amp; Founder</div>
+    <div class="t-exp">Experience: 2 Years</div>
+    <div class="t-summary">
+      Riab Hasan is the visionary founder and CEO of Bangladesh Online Madrasa. He studied at the International Islamic University Chittagong (IIUC) and focuses on integrating technology with education to create accessible learning platforms.
+    </div>
   </div>
-  <h3 id="tName">শিক্ষক ১</h3>
-  <p id="tDes">উস্তাদ</p>
+
+  <!-- Arabic Language Teacher -->
+  <div class="single-teacher" role="article" aria-label="Arabic Language Teacher">
+    <img src="https://i.imgur.com/xbCkScP.jpeg" alt="Arabic Language Teacher">
+    <div class="t-name">Arabic Language Teacher</div>
+    <div class="t-position">Lecturer in Arabic</div>
+    <div class="t-exp">Experience: 2 Years</div>
+    <div class="t-summary">
+      A skilled Arabic language instructor with academic training from the Islamic University, Kushtia. Uses clear explanation and structured lessons to build students' understanding of Arabic and Islamic studies.
+    </div>
+  </div>
+
+  <!-- Dh Shipon -->
+  <div class="single-teacher" role="article" aria-label="Dh Shipon">
+    <img src="https://i.imgur.com/TbM78cK.jpeg" alt="Dh Shipon">
+    <div class="t-name">Dh Shipon</div>
+    <div class="t-position">Lecturer, Department of English</div>
+    <div class="t-exp">Experience: 2 Years</div>
+    <div class="t-summary">
+      Dh Shipon is a dedicated English educator with B.A. (Honours) and M.A. (First Class) from the University of Chittagong. He focuses on literature and effective, engaging teaching methods.
+    </div>
+  </div>
 </div>
 
 <!-- FOOTER -->
@@ -309,23 +418,16 @@
   <p style="opacity:0.7; margin-top:20px;">© বাংলাদেশ অনলাইন মাদ্রাসা 2025 — All Rights Reserved</p>
 </footer>
 
+<!-- MODAL -->
+<div id="courseModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img id="modalImage" class="modal-img" src="" alt="">
+    <div id="modalDetails" class="modal-details"></div>
+  </div>
+</div>
+
 <script>
-/* TEACHER SLIDER */
-let teachers = [
-  {img: "TEACHER_IMAGE_1", name: "শিক্ষক ১", des: "উস্তাদ"},
-  {img: "TEACHER_IMAGE_2", name: "শিক্ষক ২", des: "মুহাদ্দিস"},
-  {img: "TEACHER_IMAGE_3", name: "শিক্ষক ৩", des: "মুফতি"},
-];
-
-let tIndex = 0;
-setInterval(() => {
-  tIndex = (tIndex + 1) % teachers.length;
-  document.getElementById("tImg").src = teachers[tIndex].img;
-  document.getElementById("tName").innerText = teachers[tIndex].name;
-  document.getElementById("tDes").innerText = teachers[tIndex].des;
-}, 3500);
-
-
 /* MOTIVATION TEXT ROTATION */
 let motivationList = [
   "শেখা বন্ধ হলে উন্নতি বন্ধ হয়ে যায়।",
@@ -342,6 +444,52 @@ setInterval(() => {
   mIndex = (mIndex + 1) % motivationList.length;
   document.getElementById("motivationText").innerText = motivationList[mIndex];
 }, 5000);
+
+// Course Details Data (Demo)
+const courseDetails = {
+  1: {
+    img: "COURSE_IMAGE_1",
+    details: "এটি আরবি ভাষা কোর্সের ডেমো। এখানে ব্যাকরণ, শব্দভান্ডার, এবং কথোপকথনের পাঠ অন্তর্ভুক্ত। এই কোর্সটি শিক্ষার্থীদের আরবি ভাষায় দক্ষতা অর্জন করতে সাহায্য করে। আরও বিস্তারিত তথ্য: সপ্তাহে ৩টি ক্লাস, মোট ১২টি মডিউল, এবং প্র্যাকটিস সেশন। এটি একটি দীর্ঘ টেক্সট যাতে স্ক্রল করা যায়: লোরেম ইপসাম ডলর সিট আমেট, কনসেকটেটুর অ্যাডিপিসিং এলিট। সেড ডো ইউসমোড টেম্পোর ইনসিডিডান্ট উট ল্যাবোরে এট ডলোরে ম্যাগনা অ্যালিকুয়া। উট এনিম অ্যাড মিনিম ভেনিয়াম, কুইস নস্ট্রুড এক্সারসিটেশন উল্লামকো ল্যাবোরিস নিসি উট অ্যালিকুইপ এক্স ইএ কমোডো কনসেকুয়াট। ডুইস অটে ইরুরে ডলর ইন রেপ্রেহেন্ডেরিট ইন ভলুপটেট ভেলিট এসে সিল্লুম ডলোরে ইউ ফুগিয়াট নুল্লা প্যারিয়াটুর। এক্সসেপ্টুর সিন্ট অককায়েকাট কুপিডাটাট নন প্রোইডেন্ট, সান্ট ইন কুলপা কুই অফিশিয়া ডেসেরান্ট মোল্লিট অ্যানিম ইড এস্ট ল্যাবোরাম।"
+  },
+  2: {
+    img: "COURSE_IMAGE_2",
+    details: "এটি ইসলামিক স্টাডিজ কোর্সের ডেমো। এখানে কুরআন, হাদিস, এবং ফিকহের পাঠ অন্তর্ভুক্ত। এই কোর্সটি শিক্ষার্থীদের ইসলামিক জ্ঞান বৃদ্ধি করে। আরও বিস্তারিত তথ্য: সপ্তাহে ৪টি ক্লাস, মোট ১০টি মডিউল, এবং কুইজ। এটি একটি দীর্ঘ টেক্সট যাতে স্ক্রল করা যায়: লোরেম ইপসাম ডলর সিট আমেট, কনসেকটেটুর অ্যাডিপিসিং এলিট। সেড ডো ইউসমোড টেম্পোর ইনসিডিডান্ট উট ল্যাবোরে এট ডলোরে ম্যাগনা অ্যালিকুয়া। উট এনিম অ্যাড মিনিম ভেনিয়াম, কুইস নস্ট্রুড এক্সারসিটেশন উল্লামকো ল্যাবোরিস নিসি উট অ্যালিকুইপ এক্স ইএ কমোডো কনসেকুয়াট। ডুইস অটে ইরুরে ডলর ইন রেপ্রেহেন্ডেরিট ইন ভলুপটেট ভেলিট এসে সিল্লুম ডলোরে ইউ ফুগিয়াট নুল্লা প্যারিয়াটুর। এক্সসেপ্টুর সিন্ট অককায়েকাট কুপিডাটাট নন প্রোইডেন্ট, সান্ট ইন কুলপা কুই অফিশিয়া ডেসেরান্ট মোল্লিট অ্যানিম ইড এস্ট ল্যাবোরাম।"
+  },
+  3: {
+    img: "COURSE_IMAGE_3",
+    details: "এটি ইংরেজি কোর্সের ডেমো। এখানে গ্রামার, লিটারেচার, এবং কনভারসেশনের পাঠ অন্তর্ভুক্ত। এই কোর্সটি শিক্ষার্থীদের ইংরেজিতে দক্ষতা অর্জন করতে সাহায্য করে। আরও বিস্তারিত তথ্য: সপ্তাহে ৩টি ক্লাস, মোট ৮টি মডিউল, এবং অ্যাসাইনমেন্ট। এটি একটি দীর্ঘ টেক্সট যাতে স্ক্রল করা যায়: লোরেম ইপসাম ডলর সিট আমেট, কনসেকটেটুর অ্যাডিপিসিং এলিট। সেড ডো ইউসমোড টেম্পোর ইনসিডিডান্ট উট ল্যাবোরে এট ডলোরে ম্যাগনা অ্যালিকুয়া। উট এনিম অ্যাড মিনিম ভেনিয়াম, কুইস নস্ট্রুড এক্সারসিটেশন উল্লামকো ল্যাবোরিস নিসি উট অ্যালিকুইপ এক্স ইএ কমোডো কনসেকুয়াট। ডুইস অটে ইরুরে ডলর ইন রেপ্রেহেন্ডেরিট ইন ভলুপটেট ভেলিট এসে সিল্লুম ডলোরে ইউ ফুগিয়াট নুল্লা প্যারিয়াটুর। এক্সসেপ্টুর সিন্ট অককায়েকাট কুপিডাটাট নন প্রোইডেন্ট, সান্ট ইন কুলপা কুই অফিশিয়া ডেসেরান্ট মোল্লিট অ্যানিম ইড এস্ট ল্যাবোরাম।"
+  },
+  4: {
+    img: "COURSE_IMAGE_4",
+    details: "এটি কুরআন তিলাওয়াত কোর্সের ডেমো। এখানে তাজবীদ, মখরাজ, এবং রেকর্ডিংয়ের পাঠ অন্তর্ভুক্ত। এই কোর্সটি শিক্ষার্থীদের কুরআন পড়ায় দক্ষতা অর্জন করতে সাহায্য করে। আরও বিস্তারিত তথ্য: সপ্তাহে ২টি ক্লাস, মোট ১৫টি মডিউল, এবং প্র্যাকটিস। এটি একটি দীর্ঘ টেক্সট যাতে স্ক্রল করা যায়: লোরেম ইপসাম ডলর সিট আমেট, কনসেকটেটুর অ্যাডিপিসিং এলিট। সেড ডো ইউসমোড টেম্পোর ইনসিডিডান্ট উট ল্যাবোরে এট ডলোরে ম্যাগনা অ্যালিকুয়া। উট এনিম অ্যাড মিনিম ভেনিয়াম, কুইস নস্ট্রুড এক্সারসিটেশন উল্লামকো ল্যাবোরিস নিসি উট অ্যালিকুইপ এক্স ইএ কমোডো কনসেকুয়াট। ডুইস অটে ইরুরে ডলর ইন রেপ্রেহেন্ডেরিট ইন ভলুপটেট ভেলিট এসে সিল্লুম ডলোরে ইউ ফুগিয়াট নুল্লা প্যারিয়াটুর। এক্সসেপ্টুর সিন্ট অককায়েকাট কুপিডাটাট নন প্রোইডেন্ট, সান্ট ইন কুলপা কুই অফিশিয়া ডেসেরান্ট মোল্লিট অ্যানিম ইড এস্ট ল্যাবোরাম।"
+  }
+};
+
+// Modal Functionality
+const modal = document.getElementById("courseModal");
+const modalImg = document.getElementById("modalImage");
+const modalDetails = document.getElementById("modalDetails");
+const closeBtn = document.getElementsByClassName("close")[0];
+
+document.querySelectorAll(".details-btn").forEach(btn => {
+  btn.addEventListener("click", function() {
+    const courseId = this.getAttribute("data-course");
+    const course = courseDetails[courseId];
+    modalImg.src = course.img;
+    modalDetails.innerHTML = course.details;
+    modal.style.display = "block";
+  });
+});
+
+closeBtn.addEventListener("click", function() {
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+});
 </script>
 
 </body>
