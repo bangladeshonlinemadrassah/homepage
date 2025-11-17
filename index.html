@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>বাংলাদেশ অনলাইন মাদ্রাসা</title>
+
+  <!-- New Premium Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&family=Russo+One&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: white;
+      background: linear-gradient(135deg, #14002b, #260042, #000000, #32005f, #001f3f);
+      background-size: 500% 500%;
+      animation: gradientShift 18s ease infinite;
+      background-attachment: fixed;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background: linear-gradient(90deg, #3a0ca3aa, #7209b7aa, #f72585aa);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid #ff00ff88;
+    }
+
+    .logo img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 3px solid #00eaff;
+      box-shadow: 0 0 25px #00eaff88;
+    }
+
+    /* TITLE */
+    h1 {
+      text-align: center;
+      font-size: 38px;
+      margin-top: 20px;
+      font-family: "Russo One", sans-serif;
+      background: linear-gradient(90deg, #ff00ff, #00eaff, #ffea00, #ff6bcb, #00ff55);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 12px #ffffff55;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 5px;
+      font-size: 18px;
+      opacity: 0.85;
+      color: #e5dfff;
+    }
+
+    /* BANNER */
+    .teacher-banner img {
+      width: 92%;
+      height: 260px;
+      display: block;
+      margin: 25px auto;
+      border-radius: 22px;
+      object-fit: cover;
+      border: 3px solid #00c3ff;
+      box-shadow: 0 8px 30px #00000088;
+    }
+
+    /* MAIN BUTTON */
+    .main-btn {
+      margin: 25px auto;
+      padding: 18px 45px;
+      display: block;
+      font-size: 22px;
+      font-weight: 700;
+      text-align: center;
+      border-radius: 50px;
+      cursor: pointer;
+      background: linear-gradient(45deg, #ff00c8, #00eaff, #ffea00, #ff0080, #00ff55);
+      background-size: 400% 400%;
+      animation: glowMove 4s linear infinite;
+      color: white;
+      border: none;
+      box-shadow: 0 0 25px #ff00ff88;
+      width: fit-content;
+    }
+
+    @keyframes glowMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* MOTIVATION BOX */
+    .motivation-box {
+      width: 90%;
+      margin: 20px auto 35px;
+      padding: 18px 20px;
+      background: linear-gradient(135deg, #ffffff10, #00eaff22, #ff00c822);
+      border-radius: 18px;
+      text-align: center;
+      border: 2px solid #00eaff66;
+      box-shadow: 0 0 25px #00eaff44;
+    }
+
+    .motivation-box p {
+      font-size: 18px;
+      font-weight: 600;
+      color: #00ffea;
+      animation: fadeText 1s ease;
+    }
+
+    /* COURSES */
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 90%;
+      margin: auto;
+      gap: 20px;
+    }
+
+    .course-box {
+      background: linear-gradient(135deg, #ffffff10, #8900f522);
+      padding: 15px;
+      border-radius: 20px;
+      text-align: center;
+      border: 2px solid #ffffff22;
+      box-shadow: 0 0 20px #5500ff55;
+    }
+
+    .course-img img {
+      width: 100%;
+      height: 140px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 2px solid #00eaff44;
+    }
+
+    .course-box p {
+      margin-top: 10px;
+      font-size: 17px;
+      color: #ffea00;
+    }
+
+    /* TEACHER BOX */
+    .teacher-box {
+      width: 85%;
+      margin: 40px auto;
+      padding: 35px;
+      background: linear-gradient(135deg, #ffffff10, #ff00c822, #00eaff22);
+      border-radius: 25px;
+      text-align: center;
+      border: 3px solid #ff00ff55;
+      box-shadow: 0 0 35px #ff00ff55;
+    }
+
+    .teacher-photo img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #00ffe5;
+      box-shadow: 0 0 20px #00ffe588;
+    }
+
+    .teacher-box h3 {
+      margin-top: 15px;
+      color: #00ffea;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .teacher-box p {
+      margin-top: 8px;
+      font-size: 18px;
+      color: #ffea00;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 40px;
+      background: linear-gradient(135deg, #1a0033ee, #320059ee, #000522ee);
+      padding: 35px 20px;
+      text-align: center;
+      color: #e2d9ff;
+      border-top: 3px solid #ff00ff88;
+      box-shadow: 0 -5px 35px #000000aa;
+      border-radius: 20px 20px 0 0;
+    }
+
+    footer h3 {
+      margin-top: 10px;
+      font-size: 22px;
+      color: #00eaff;
+      font-family: "Pacifico", cursive;
+      text-shadow: 0 0 15px #00eaff99;
+    }
+
+    .social-icons img {
+      width: 45px;
+      margin: 12px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px #00eaffaa;
+    }
+
+    @media (max-width: 600px) {
+      .courses { grid-template-columns: 1fr; }
+      h1 { font-size: 30px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="YOUR_LOGO_1_LINK" alt="Logo 1">
+  </div>
+  <div class="logo">
+    <img src="YOUR_LOGO_2_LINK" alt="Logo 2">
+  </div>
+</header>
+
+<h1>বাংলাদেশ অনলাইন মাদ্রাসা</h1>
+<h2>দেশজুড়ে মাদ্রাসা শিক্ষার্থীদের বিশ্বস্ত শিক্ষা সঙ্গী</h2>
+
+<div class="teacher-banner">
+  <img src="YOUR_TEACHER_BANNER_LINK" alt="">
+</div>
+
+<button class="main-btn">আপনার এনরোলকৃত কোর্স</button>
+
+<!-- MOTIVATION AREA -->
+<div class="motivation-box">
+  <p id="motivationText">শেখা মানে প্রতিদিন এক ধাপ এগিয়ে যাওয়া।</p>
+</div>
+
+<!-- COURSES -->
+<div class="courses">
+
+  <div class="course-box">
+    <div class="course-img">
+      <img src="COURSE_IMAGE_1" alt="">
+    </div>
+    <p>ডিটেল্স</p>
+  </div>
+
+  <div class="course-box">
+    <div class="course-img">
+      <img src="COURSE_IMAGE_2" alt="">
+    </div>
+    <p>ডিটেল্স</p>
+  </div>
+
+  <div class="course-box">
+    <div class="course-img">
+      <img src="COURSE_IMAGE_3" alt="">
+    </div>
+    <p>ডিটেল্স</p>
+  </div>
+
+  <div class="course-box">
+    <div class="course-img">
+      <img src="COURSE_IMAGE_4" alt="">
+    </div>
+    <p>ডিটেল্স</p>
+  </div>
+
+</div>
+
+<!-- TEACHER BOX -->
+<div class="teacher-box">
+  <div class="teacher-photo">
+    <img id="tImg" src="TEACHER_IMAGE_1" alt="">
+  </div>
+  <h3 id="tName">শিক্ষক ১</h3>
+  <p id="tDes">উস্তাদ</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+
+  <h3>Md Riad Hasan</h3>
+  <p>CEO & Founder</p>
+
+  <br>
+
+  <p>📍 ঠিকানা: Level-4, 34, Banani, Dhaka</p>
+  <p>📞 হেল্পলাইন: 01XXXXXXXXX</p>
+  <p>📧 ইমেইল: YOUR_SUPPORT_EMAIL</p>
+
+  <div class="social-icons">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+  </div>
+
+  <p style="opacity:0.7; margin-top:20px;">© বাংলাদেশ অনলাইন মাদ্রাসা 2025 — All Rights Reserved</p>
+</footer>
+
+<script>
+/* TEACHER SLIDER */
+let teachers = [
+  {img: "TEACHER_IMAGE_1", name: "শিক্ষক ১", des: "উস্তাদ"},
+  {img: "TEACHER_IMAGE_2", name: "শিক্ষক ২", des: "মুহাদ্দিস"},
+  {img: "TEACHER_IMAGE_3", name: "শিক্ষক ৩", des: "মুফতি"},
+];
+
+let tIndex = 0;
+setInterval(() => {
+  tIndex = (tIndex + 1) % teachers.length;
+  document.getElementById("tImg").src = teachers[tIndex].img;
+  document.getElementById("tName").innerText = teachers[tIndex].name;
+  document.getElementById("tDes").innerText = teachers[tIndex].des;
+}, 3500);
+
+
+/* MOTIVATION TEXT ROTATION */
+let motivationList = [
+  "শেখা বন্ধ হলে উন্নতি বন্ধ হয়ে যায়।",
+  "আপনি পারবে — শুধু শুরুটা করে ফেলুন।",
+  "ধৈর্য আর পরিশ্রমই সফলতার চাবিকাঠি।",
+  "প্রতিদিন ছোট ছোট উন্নতিই বড় সফলতা আনে।",
+  "জ্ঞানই মানুষের আসল শক্তি।",
+  "যে চেষ্টা করে, আল্লাহ তার পথ খুলে দেন।"
+];
+
+let mIndex = 0;
+
+setInterval(() => {
+  mIndex = (mIndex + 1) % motivationList.length;
+  document.getElementById("motivationText").innerText = motivationList[mIndex];
+}, 5000);
+</script>
+
+</body>
+</html>
